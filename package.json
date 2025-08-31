@@ -6,13 +6,30 @@
     "url": "https://github.com/qbittorrent/qBittorrent-website.git"
   },
   "scripts": {
+    "build": "eleventy",
+    "check-html": "html-validate _site/*.html",
     "format": "prettier --write **.css",
-    "lint": "stylelint **/*.css"
+    "lint": "tsc --noEmit && eslint --cache src/scripts/**.ts && stylelint --cache **/*.css",
+    "serve": "eleventy --serve"
   },
+  "type": "module",
   "devDependencies": {
+    "@11ty/eleventy": "3",
+    "@stylistic/eslint-plugin": "*",
+    "eslint": "*",
+    "eslint-plugin-html": "*",
+    "html-validate": "*",
+    "js-beautify": "*",
+    "markdown-it-anchor": "*",
     "prettier": "*",
     "stylelint": "*",
     "stylelint-config-standard": "*",
-    "stylelint-order": "*"
-  }
+    "stylelint-order": "*",
+    "swc": "*",
+    "typescript": "*",
+    "typescript-eslint": "*"
+  },
+  "workspaces": [
+    "atom_generator"
+  ]
 }

@@ -1,0 +1,12 @@
+{
+    "compilerOptions":
+    {
+        "module": "nodenext",
+        "noImplicitAny": true,
+        "strict": true,
+        "target": "ES2022"
+    },
+    "ts-node": {
+        "swc": true
+    }
+}
